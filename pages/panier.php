@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>La boutique E-commerce privée</title>
-  <link rel="stylesheet" href="/Tp3/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,11 +15,11 @@
 
   <nav id="topNav">
     <ul>
-    <li><a href="/Tp3/accueil.php">Accueil</a></li>
-      <li><a href="/Tp3/pages/produit.php">Produit</a></li>
-      <li><a href="/Tp3/pages/form.php">Ajout de produit</a></li>
-      <li><a href="/Tp3/pages/panier.php">Panier</a></li>
-      <li><a href="/Tp3/index.php">Déconnexion</a></li>
+    <li><a href="/accueil.php">Accueil</a></li>
+      <li><a href="/pages/produit.php">Produit</a></li>
+      <li><a href="/pages/form.php">Ajout de produit</a></li>
+      <li><a href="/pages/panier.php">Panier</a></li>
+      <li><a href="/index.php">Déconnexion</a></li>
     </ul>
   </nav>
 

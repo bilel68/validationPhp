@@ -4,7 +4,7 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<title>%title%</title>
-		<link rel="stylesheet" href="/Tp2/style.css">
+		<link rel="stylesheet" href="/style.css">
 
 	</head>
 	<body>

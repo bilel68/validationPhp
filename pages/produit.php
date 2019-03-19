@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>La boutique E-commerce privée</title>
-  <link rel="stylesheet" href="/Tp3/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,11 +15,11 @@
 
   <nav id="topNav">
     <ul>
-      <li><a href="/Tp3/accueil.php">Accueil</a></li>
-      <li><a href="/Tp3/pages/produit.php">Produit</a></li>
-      <li><a href="/Tp3/pages/form.php">Ajout de produit</a></li>
-      <li><a href="/Tp3/pages/panier.php">Panier</a></li>
-      <li><a href="/Tp3/index.php">Déconnexion</a></li>
+      <li><a href="/accueil.php">Accueil</a></li>
+      <li><a href="/pages/produit.php">Produit</a></li>
+      <li><a href="/pages/form.php">Ajout de produit</a></li>
+      <li><a href="/pages/panier.php">Panier</a></li>
+      <li><a href="/index.php">Déconnexion</a></li>
     </ul>
   </nav>
 
@@ -50,21 +50,21 @@
   <br /><br />
   <table>
     <td>
-      <tr><img src="/Tp3/img/wrc.jpg" alt="imageWrc" style="height: 300px;">
+      <tr><img src="/img/wrc.jpg" alt="imageWrc" style="height: 300px;">
         <p>Libellé :WRC sur ps4</p>
         <p>Prix : 59 euros</p>
         <tr><a href="panier.php?action=ajout&amp;l=WRC&amp;q=1&amp;p=59"; return false;>Ajouter au panier</a> </tr>
       </td><br /><br />
 
       <td>
-        <tr><img src="/Tp3/img/thecrew.jpg" alt="imageTheCrew" style="height: 300px;">
+        <tr><img src="/img/thecrew.jpg" alt="imageTheCrew" style="height: 300px;">
         <p>Libellé :The crew sur ps4</p>
         <p>Prix : 29 euros</p></tr>
         <tr><a href="panier.php?action=ajout&amp;l=CREW&amp;q=1&amp;p=29"; return false;>Ajouter au panier</a> </tr>
       </td><br /><br />
 
       <td>
-        <tr><img src="/Tp3/img/assetto.jpg" alt="imageAssetto" style="height: 300px;">
+        <tr><img src="/img/assetto.jpg" alt="imageAssetto" style="height: 300px;">
         <p>Libellé : Assetto</p>
         <p>Prix : 69 euros</p></tr>
         <tr><a href="panier.php?action=ajout&amp;l=Assetto&amp;q=1&amp;p=69"; return false;>Ajouter au panier</a></tr>

@@ -10,7 +10,7 @@ if (isset($_POST['login']) && isset($_POST['pwd']))  {
     $_SESSION['login'] = $_POST['login'];
     $_SESSION['pwd'] = $_POST['pwd'];
 
-    header('location: /Tp3/accueil.php');
+    header('location: /accueil.php');
 
   }
   else{
