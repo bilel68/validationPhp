@@ -5,7 +5,30 @@ lecture d’écran. Il faut rajouter dans la balise img un attribut “alt” d�
 l’image).
 
 
-*
+
+# Opportuninties
+
+* Supprimer les ressources qui bloque l'affichage de certains élément de la page . Créer un fichier Css ou js au lieu de faire du developemment inline.
+
+# Accessibility
+
+* La couleur d'arrière plan et de premier plan n'est pas adapté pour le lecteur car le ration contrast n'est pas suffisant. 
+
+* Il manque l'attribut "lang" dans la balise <html> afin d'améliorer l'interprétation du contenu du site dans d'autre pays.
+
+# Best Practices
+
+* Non usage du protocol HTTP/2 qui offre de meilleur bénéfice que le HTML/1 permetant d'inclure des données binaire dans le header d'effectuer du multiplexing et d'effectuer des push sur le server 
+
+* Les liens vers les destinations d'origine croisée sont dangereuses donc il faut rajouter l'attribut rel='noopener' ou rep="noreferer"
+
+* Dans une page html il manque le DOCTYPE 
+
+# SEO
+
+* Ne possède pas de balise meta name="viewport" par rapport au tag de largeur donc il faut le rajouter pour avoir un meilleur réferencement
+
+* La taille de la polise n'est pas assez grande il faut la mettre une police egal ou superieur a 12px pour les visiteurs qui ont un écran de smartphone
 
 
 
