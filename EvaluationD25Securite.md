@@ -73,25 +73,38 @@ Afficher le code source du fichier “http://localhost/vulnerabilities/fi/index.
 technique avez-vous utilisée ? Expliquer quel pourrait-être l’impact de cette attaque.
 Comment pourrait-on s’en protéger ?
 
-* 
+* L’inclusion de fichier  consiste en le fait d’utiliser l’application et ses fonctionnalités afin de charger des pages et des fichiers spécifiques
 
+* Dans des exploitations plus avancées, une faille LFI/RFI peut permettre l’exécution de code côté serveur
 
+* Charger une image iso par exemple qui est un gros fichier va permettre de bloque la communication le temps que la requete soit traitée . On parle alors de déni de service
+
+* Il faudrait ne pas laisser la possibilité de passer de paramètre dans l'url . Et mettre la valeur directement dans le code. On peut aussi utiliser une autre méthode tel que l'usage de la liste blanche par laquelle tout ce qui n'est pas explicitement autorisée est interdit.
+Concernant les failles de types LFI, il est possible de cloisonner les droits et les accès d’un serveur web afin que celui-ci ne puisse pas remonter une arborescence web au delà d’un certain point.
 
 #5. Exploiter la faille “SQL Injection” de manière manuelle (c’est à dire sans SQLMap). Lister
 toutes les tables présentes sur la base de données. Vous décrirez précisément étapes par
 étapes comment vous avez procédé. Expliquer quel pourrait-être l’impact de cette attaque.
 Comment pourrait-on s’en protéger ?
 
-*
+* http://127.0.0.1/vulnerabilities/sqli/?id=a' UNION SELECT (SELECT GROUP_CONCAT(TABLE_NAME) FROM information_schema.TABLES), "";-- -&Submit=Submit.
 
+* Cela permet de recuperer  ou encore de modifier/supprimer/ajouter des donnée d'informations dans la bdd tels que le noms des tables , ou des champs ou encore les insertions sensibles 
 
+* Les fonctions addslashes() et magic_quotes_gpc() mysqli_real_escape_string() sont aussi utilisées pour protèger des injection sql .
+
+Un moyen qui tend à se généraliser mais impacte légèrement les performances est l’utilisation des commandes préparées
+
+Les procédures stockées nécessitent plus de connaissances mais peuvent aussi être utilisées. L’identification restera bien protégée à l’intérieur de la procédure et ne pourra plus être détournée.
+
+Enfin, il faut préférer l’utilisation de comptes utilisateurs à accès limité pour empêcher la modification ou suppression d’éléments de la base de données. Et éventuellement vérifier les données avec des expressions régulières ou utiliser des tableaux contenant tous les résultats possibles.
 
 
 #6. Exploiter la faille “SQL Injection (Blind)” avec SQLMap. Vous décrirez précisément
 quelles commandes vous avez utilisez et pourquoi. Quelle est la spécificité d’une injection
 SQL en mode “aveugle” ?
 
-*
+'python sqlmap.py -u "http://127.0.0.1/vulnerabilities/sqli_blind/?id=1&Submit=Submit#" --cookie="PHPSESSID=rriiutgo9mhfghjlecnbtt8e87; security=low" --all 
 
 
 
@@ -99,7 +112,10 @@ SQL en mode “aveugle” ?
 décrirez précisément étapes par étapes comment vous avez procédé. Expliquer quel
 pourrait-être l’impact de cette attaque. Comment pourrait-on s’en protéger ?
 
-*
+'http://127.0.0.1/vulnerabilities/xss_d/?default=Spanish<script>document.body.append('test')</script>
+
+Grace a cette methode on peut directement intervenir dans le code coté server-side dans le navigateur -> network. On peut s'en proteger en filtrant a l'aide de conditions tels que l'utilisation de conditions if ou switch case.
+
 
 
 
@@ -108,15 +124,24 @@ pourrait-être l’impact de cette attaque. Comment pourrait-on s’en protéger
 décrirez précisément étapes par étapes comment vous avez procédé. Pourquoi une XSS
 stockées est-elle plus impactante qu’une volatile ?
 
-*
+'http://127.0.0.1/vulnerabilities/xss_d/?default=Spanish<script>document.body.append('test')</script>
 
+ La faille est la plus simple des deux. Elle est appelée non permanente car elle n'est pas enregistrée dans un fichier ou dans une base de données. Elle est donc éphémère 
+
+La faille permanente est la faille XSS la plus sérieuse car le script est sauvegardé dans un fichier ou une base de données. Il sera donc affiché à chaque ouverture du site
 
 #9. (Bonus) Que signifie DIA (ou CIA en anglais) ?
 
-*
+* 
 
 
 #10. (Bonus) Expliquer la différence entre chiffrer et hasher. Quelle est l’utilité de rajouter un
 “salt” dans un hash ?
 
-*
+* Hachage
+une fonction de hachage est un algorithme permettant de modifier un texte (appelé message) en valeur de longueur fixe (appelé hash)
+
+Le chiffrement
+En cryptographie, on encode un texte de telle sorte que seuls des personnes autorisées puissent le déchiffrer. Ici, le processus d'encodage se nomme : "chiffrement". Le mot cryptage n'existe pas.
+
+ Les sels sont utilisés pour protéger les mots de passe stockés. Auparavant, un mot de passe était stocké en texte brut sur un système, mais au fil du temps, des protections supplémentaires ont été développées pour protéger le mot de passe d'un utilisateur contre toute lecture par le système. Un sel est l'une de ces méthodes
