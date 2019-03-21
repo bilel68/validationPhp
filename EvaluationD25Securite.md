@@ -60,7 +60,11 @@ protéger ?
 Bonus: Expliquer la différence entre un “bind shell” et un “reverse shell”. Pourquoi est-il plus
 efficace d’utiliser un reverse shell ?
 
-*
+* Pour exploiter la faille command Injection il suffit d'entrer une adresse IP tel que 8.8.8.8 et rajouter la ligne de commande cat /etc/passwd comme cela : "8.8.8.8 &&  cat /etc/passwd" ainsi cette action est éffectuer lorsqu'un script est vulnérable et cela et cela a une impact sur la sécurité de l'application tels que l'efacement de contenu , le vol d'informations , la compromission du serveur etc.
+
+* La différence entre un bind shell et un reverse shell c'est le fait que la victime possede une machine sur qui est sur ecoute . Donc l'attaque (soit la communication)  provient du hacker . 
+
+* Alors que le reverse shell provient de la communication lancée par la victime et donc la victime a moins de chance s'en rendre compte
 
 
 
@@ -69,7 +73,7 @@ Afficher le code source du fichier “http://localhost/vulnerabilities/fi/index.
 technique avez-vous utilisée ? Expliquer quel pourrait-être l’impact de cette attaque.
 Comment pourrait-on s’en protéger ?
 
-*
+* 
 
 
 
