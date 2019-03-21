@@ -132,7 +132,7 @@ La faille permanente est la faille XSS la plus sérieuse car le script est sauve
 
 #9. (Bonus) Que signifie DIA (ou CIA en anglais) ?
 
-* 
+* Confidantiality, Integrity, Availability (C.I.A.)
 
 
 #10. (Bonus) Expliquer la différence entre chiffrer et hasher. Quelle est l’utilité de rajouter un
