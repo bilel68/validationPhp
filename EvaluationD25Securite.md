@@ -39,7 +39,14 @@ répertoires cachés. Un des fichiers peut nous apporter beaucoup d’informatio
 configuration de l’application et du serveur, quel est son nom (s’il a été trouvé) ? Expliquer
 quel est l’objectif de cette attaque. Comment pourrait-on s’en protéger ?
 
-*
+* le nom du serveur est Apache 2.0 Handler 
+
+* Le brute force est une méthode utilisée en cryptanalise pour trouver un mot de passe ou des fichier cachée ainsi que des infos cachée au publique .Donc des données sensible tels que des identifiant ou des données par rapport à la configuration de l'applications.
+
+* Pour s'en proteger il faut mettre en place des programmes de détections qui peuvent bloquer certaines IPs si des attaques brute-force sont détectées notamment Fail2ban.
+Filtrer les accès aux services (filtrage IPs etc).
+
+* Ou encore ralentir l'acces avec un temps aléatoire au cas ou la même addresse IP accède a l'application plusieur fois de suite .
 
 
 
